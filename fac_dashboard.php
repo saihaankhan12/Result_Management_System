@@ -15,6 +15,7 @@ if(isset($_POST['import-btn']))
     $spreadSheetAry = $excelSheet->toArray();
     $sheetCount = count($spreadSheetAry);
 
+    // In SQL, column names with spaces or special characters need to be enclosed in backticks (`) to ensure they're recognized correctly.
     for($i = 1;$i<$sheetCount;$i++)
     {
         $sql = "insert into stud_marks(`ROLL NO.`,`DMQP`,`DMQP IT`,`OS`,`OS IT`,`OOPJ`,`OOPJ IT`,`WT`,`WT IT`,`CLIPR`,`CLIPR IT`,`CC`,`CC IT`) values('".$spreadSheetAry[$i][0]."' ,    '".$spreadSheetAry[$i][1]."' , '".$spreadSheetAry[$i][2]."' , '".$spreadSheetAry[$i][3]."' , '".$spreadSheetAry[$i][4]."' , '".$spreadSheetAry[$i][5]."' ,       '".$spreadSheetAry[$i][6]."' , '".$spreadSheetAry[$i][7]."' , '".$spreadSheetAry[$i][8]."' , '".$spreadSheetAry[$i][9]."' , '".$spreadSheetAry[$i][10]."' ,    '".$spreadSheetAry[$i][11]."' , '".$spreadSheetAry[$i][12]."' )";
@@ -44,6 +45,9 @@ if(isset($_POST['import-btn']))
     <a href="marksheet_stud.xlsx" >Download Sample File </a> 
     </div>
 
-   
+    <div>
+       <a href="stud_dashboard.php"> <button>Check Student Marks</button> </a> 
+    </div>
+
 </body>
 </html>
