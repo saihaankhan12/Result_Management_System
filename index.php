@@ -1,6 +1,6 @@
-<?php include("server.php"); ?> 
+<?php include("connection.php"); ?> 
 
-  <!-- all pages that include server.php will share the same database connection and be able to interact with the database efficiently. -->
+  <!-- all pages that include connection.php will share the same database connection and be able to interact with the database efficiently. -->
 <!DOCTYPE html>
 <html lang="en">
 <head>

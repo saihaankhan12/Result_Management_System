@@ -1,5 +1,5 @@
 <?php
-include("server.php");   
+include("connection.php");   
 //The $_POST superglobal in PHP is used to collect form data sent through an HTTP POST request. It allows you to access data submitted by users through a form with the method="post" attribute, which securely sends data like passwords, user inputs, or other sensitive information that should not appear in the URL.
 
 if(isset($_POST['submit']))  //when we click submit then we redirect to login logic
