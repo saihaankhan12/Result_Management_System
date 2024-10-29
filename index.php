@@ -47,7 +47,7 @@ else
 </head>
 <body>
     <H2>LOGIN</H2>
-    <form action="" method="POST">
+    <form action="" method="POST">  <!-- The action attribute determines where the data is sent upon form submission. -->
        <label for="email">Email Address</label>
        <div> <input type="text" name = "email" id="email" autofocus required> </div> 
 

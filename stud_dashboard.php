@@ -6,6 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-    <h1> welcome!!!</h1>
+<form action="displayMarks.php" method="POST">
+    <label for="rollno">Enter your Roll Number </label>
+    <input type="text" name="rollno" required autofocus>
+    <div>
+    <button type="submit" name="submit-btn">SUBMIT</button>
+    </div>
+</form>
+
 </body>
 </html>
