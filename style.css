@@ -1,0 +1,21 @@
+body{
+    display: grid;
+    place-content: center;
+    height: 100vh;
+}
+.box1{
+    height: 200px;
+    width: 800px;
+    border: 2px solid black;
+}
+
+.box2{
+    height: 30px;
+    width: 600px;
+    border: 2px solid black;
+}
+
+button{
+    background-color: rgb(114, 221, 114);
+    margin-top: 10px;
+}
