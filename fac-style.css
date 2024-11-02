@@ -1,21 +1,79 @@
-body{
-    display: grid;
-    place-content: center;
-    height: 100vh;
-}
-.box1{
-    height: 200px;
-    width: 800px;
-    border: 2px solid black;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.box2{
-    height: 30px;
-    width: 600px;
-    border: 2px solid black;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Light gray background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
 }
 
-button{
-    background-color: rgb(114, 221, 114);
-    margin-top: 10px;
+.container {
+    max-width: 400px; /* Restrict width to look like a login page */
+    width: 100%;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px; /* Increase title size */
+}
+
+.box1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box2 {
+    margin-bottom: 15px;
+}
+
+input[type="file"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    cursor: pointer;
+}
+
+button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%; /* Full width for button */
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.sample-file {
+    display: inline-block;
+    margin: 15px 0;
+    text-align: center;
+    color: #007BFF;
+    text-decoration: none;
+    text-align: center;
+}
+
+.sample-file:hover {
+    text-decoration: underline;
+}
+
+.dashboard-link {
+    text-align: center;
 }
