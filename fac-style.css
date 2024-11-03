@@ -1,79 +1,102 @@
 * {
-    box-sizing: border-box;
     margin: 0;
-    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4; /* Light gray background */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full viewport height */
+    height: 100vh;
+    background-color: #000; /* Fallback color */
+    background-image: url('bluebg.jpg'); /* Background image */
+    background-size: cover;
+    background-position: center; /* Center the background */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
 }
 
 .container {
-    max-width: 400px; /* Restrict width to look like a login page */
-    width: 100%;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 320px; /* Slightly wider container for alignment */
+    padding: 20px; /* Padding for internal spacing */
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: 1px solid #fff;
+    backdrop-filter: blur(10px); /* Apply blur for glass effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    text-align: center; /* Center-align content inside container */
 }
 
 h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 24px; /* Increase title size */
+    color: #fff;
+    margin-bottom: 20px; /* Space below heading */
+    font-size: 24px; /* Single-line header */
 }
 
-.box1 {
+form {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* Center-align form items */
 }
 
-.box2 {
-    margin-bottom: 15px;
+input[type="file"],
+select,
+button {
+    width: 100%; /* Full-width buttons for consistency */
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    color: #000000;
+    font-size: 14px;
+    border: 1px solid #fff;
+    text-align: center;
+    cursor: pointer;
 }
 
 input[type="file"] {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    width: 100%;
-    cursor: pointer;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+select {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+input:focus,
+select:focus {
+    outline: none;
 }
 
 button {
-    background-color: #4CAF50; /* Green */
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    width: 100%; /* Full width for button */
+    background: #fff;
+    color: black;
+    margin-top: 15px;
 }
 
 button:hover {
-    background-color: #45a049;
+    background: transparent;
+    color: white;
+    outline: 1px solid #fff;
 }
 
-.sample-file {
-    display: inline-block;
-    margin: 15px 0;
-    text-align: center;
-    color: #007BFF;
-    text-decoration: none;
-    text-align: center;
+.check-marks-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    margin-top: 55px;
 }
 
-.sample-file:hover {
-    text-decoration: underline;
+.check-marks-btn:hover {
+    background: #fff;
+    color: black;
+} 
+
+.sem{
+    color: #fff;
+    margin-top: 20px;
 }
 
-.dashboard-link {
-    text-align: center;
+.excel-label{
+    color:white;
 }

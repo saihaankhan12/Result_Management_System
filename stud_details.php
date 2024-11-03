@@ -18,7 +18,7 @@
             align-items: center;
             height: 100vh;
             background-color: #000; /* Fallback color */
-            background-image: url('loginpage.jpg');
+            background-image: url('bluebg.jpg');
             background-size: cover;
             background-position: center; /* Center the background */
             background-repeat: no-repeat; /* Prevent the image from repeating */
@@ -60,12 +60,12 @@
             border-radius: 10px;
             background: transparent;
             border: 1px solid #fff;
-            color: #fff;
+            color: black;
             font-size: 13px;
         }
 
         input::placeholder {
-            color: #fff;
+            color: black;
         }
 
         input:focus {
@@ -104,7 +104,7 @@
 <body>
     <div class="glass-container">
         <h2>View Marks</h2>
-        <form action="stud_dashboard.php" method="POST">
+        <form action="stud_dashboard.html" method="POST">
             <label for="rollno">Enter your Roll Number</label>
             <input type="text" id="rollno" name="rollno" required autofocus placeholder="Roll Number">
             <label for="sem">Semester</label>
