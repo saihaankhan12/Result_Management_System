@@ -19,6 +19,17 @@ if (isset($_POST['examno']) && isset($_POST['sem'])) {
     $sql_name = "SELECT `name` FROM students WHERE seat_no = '$rollno'";
     $result_name = $conn->query($sql_name);
 
+    echo "<!DOCTYPE html>
+    <html lang='en'>
+    <head>
+        <meta charset='UTF-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <title>Semester Result</title>
+        <!-- Link to the external CSS file -->
+        <link rel='stylesheet' href='dash_style.css'>  <!-- Path to your CSS file -->
+    </head>
+    <body>";
+
     // Prepare table output
     echo "<table border='1' cellspacing='0' cellpadding='5' style='border-collapse: collapse; width: 100%;'>";
     echo "<tr><th colspan='26'>Semester $semester Result</th></tr>";
@@ -95,12 +106,12 @@ function calculateSGPA($conn, $rollno, $semester, $subjects) {
 
     // Define credits for each subject
     $subjectCredits = [
-        'DMS' => 3,
-        'OOSE' => 3,
-        'MADF' => 2,
-        'MM' => 2,
-        'FLAT' => 2,
-        'ECO' => 2,
+        'DMS' => 4,
+        'OOSE' => 4,
+        'MADF' => 3,
+        'MM' => 3,
+        'FLAT' => 3,
+        'ECO' => 3,
     ];
 
     foreach ($subjects as $subject) {
@@ -130,11 +141,11 @@ function calculateSGPA($conn, $rollno, $semester, $subjects) {
 
 // Grade point calculation based on total marks
 function getGradePoint($marks) {
-    if ($marks >= 85) return 10;
-    if ($marks >= 75) return 9;
-    if ($marks >= 65) return 8;
-    if ($marks >= 55) return 7;
-    if ($marks >= 45) return 6;
+    if ($marks >= 90) return 10;
+    if ($marks >= 80) return 9;
+    if ($marks >= 70) return 8;
+    if ($marks >= 60) return 7;
+    if ($marks >= 50) return 6;
     if ($marks >= 40) return 5;
     return 0;
 }
