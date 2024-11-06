@@ -1,3 +1,38 @@
+<?php
+include ('connection.php');
+
+if(isset($_POST['register'])){
+    // Get input values
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $department = $_POST['department'];  // Department from dropdown
+    $rollno = $_POST['rollno'];  // Roll Number from input
+
+    // Check if email already exists
+    $checkEmail = "SELECT * FROM user WHERE email='$email'";
+    $result = $conn->query($checkEmail);
+    
+    if($result->num_rows > 0){
+        echo "Email Address Already Exists!";
+    } else {
+        // Insert new user into database
+        $insertQuery = "INSERT INTO user( email, password, department, rollno)
+                        VALUES ( '$email', '$password', '$department', '$rollno')";
+        
+        if($conn->query($insertQuery) === TRUE){
+            header("Location: index.php");
+        } else {
+            echo "Error: " . $conn->error;
+        }
+    }
+}
+
+// Login handling remains the same
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -126,7 +161,7 @@
     <div class="glass-container">
         <div class="login-box">
             <h2>Register</h2>
-            <form action="register_process.php" method="POST">
+            <form action="register.php" method="POST">
                 <input type="email" name="email" placeholder="Email" required>
                 <input type="password" name="password" placeholder="Password" required>
                 <select name="department" required>
@@ -137,7 +172,7 @@
                     <option value="MECH">MECH</option>
                 </select>
                 <input type="text" name="rollno" placeholder="Roll Number" required>
-                <button type="submit">Register</button>
+                <button type="submit" name="register">Register</button>
             </form>
             <p>Already have an account? <a id="login" href="index.php">Login</a></p>
         </div>

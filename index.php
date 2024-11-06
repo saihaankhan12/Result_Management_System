@@ -6,18 +6,15 @@ if (isset($_POST['submit']))  //when we click submit then we redirect to login l
 {
     $email = $_POST['email'];
     $password = $_POST['pass'];
-    $sql = "select * from login where Email = '$email' and Password = '$password' ";
+    $sql = "select * from user where Email = '$email' and Password = '$password' ";
     $result =  mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
     $count = mysqli_num_rows($result);
 
-    if ($count == 1 && $row['Role'] == 'Student') { //if count == 1, ill redirect it to stud_dashboard page
+    if ($count == 1 ) { //if count == 1, ill redirect it to stud_dashboard page
         header("Location: stud_details.php");
         exit();
         //If you place any statements below an exit() call in your PHP script, those statements will not be executed. The exit() function immediately terminates the script, so anything that follows it will be ignored.
-    } elseif ($count == 1 && $row['Role'] == 'Faculty') {
-        header("Location: fac_dashboard.php");
-        exit();
     } else {
         echo '<script>
          window.location.href = "index.php";
@@ -53,7 +50,7 @@ if (isset($_POST['submit']))  //when we click submit then we redirect to login l
     <div class="glass-container">
         <div class="login-box">
             <h2>Login</h2>
-            <form action="#" method="POST">
+            <form action="index.php" method="POST">
                 <input type="text" id="email" name="email" required placeholder="Email">
                 <input type="password" id="pass" name="pass" required placeholder="Password">
                 <div class="options">
