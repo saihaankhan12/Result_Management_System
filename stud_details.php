@@ -104,9 +104,9 @@
 <body>
     <div class="glass-container">
         <h2>View Marks</h2>
-        <form action="stud_dashboard.html" method="POST">
-            <label for="rollno">Enter your Roll Number</label>
-            <input type="text" id="rollno" name="rollno" required autofocus placeholder="Roll Number">
+        <form action="stud_dashboard.php" method="POST">
+            <label for="exam">Enter your Exam Number</label>
+            <input type="text" id="examno" name="examno" required autofocus placeholder="Exam Number">
             <label for="sem">Semester</label>
             <select name="sem" id="sem" required>
                 <option value="1">1</option>
